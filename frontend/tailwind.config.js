@@ -9,6 +9,9 @@ export default {
           "100%": { opacity: "1" },
         },
       },
+      transitionDuration: {
+        3000: "3000ms", // 3 seconds
+      },
       animation: {
         fadeIn: "fadeIn 3s ease-in-out",
       },
