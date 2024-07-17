@@ -10,16 +10,16 @@ const Navbar = () => {
   const [state, setState] = useState(false);
 
   const navigation = [
-    { title: "home", path: "/" },
-    { title: "menu", path: "/menu" },
-    { title: "mobile-app", path: "/mobile" },
-    { title: "contact us", path: "/contact" },
+    { title: "Home", path: "/" },
+    { title: "Menu", path: "/menu" },
+    { title: "Mobile-app", path: "/mobile" },
+    { title: "Contact us", path: "/contact" },
   ];
 
   return (
-    <nav className="bg-white border-b mt-3 w-full md:static md:text-sm md:border-none">
+    <nav className=" bg-white border-b mt-3 w-full md:static md:text-sm md:border-none">
       <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
-        <div className="flex items-center justify-between py-3 md:py-5 md:block">
+        <div className="flex items-center justify-between py-3 md:py-5 md:block mt-1">
           <a href="/">
             <img
               src={assets.logo}
@@ -73,8 +73,11 @@ const Navbar = () => {
         >
           <ul className="justify-end items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
             {navigation.map((item, idx) => (
-              <li key={idx} className="text-black hover:text-[#B15429]">
-                <a href={item.path} className="block">
+              <li
+                key={idx}
+                className="text-black lg:text-[16px] md:text-[13px] font-semibold  "
+              >
+                <a href={item.path} className="block  hover:text-[#FF4C24]">
                   {item.title}
                 </a>
               </li>
@@ -91,7 +94,7 @@ const Navbar = () => {
               <li>
                 <FontAwesomeIcon
                   icon={faCartPlus}
-                  className="text-gray-700 lg:size-7  md:size-[24px] mt-2 hover:text-[#B15429]"
+                  className="text-gray-700 lg:size-7  md:size-[24px] mt-2 hover:text-[#B15429] "
                 />
               </li>
               <li className="">

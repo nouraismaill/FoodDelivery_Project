@@ -2,29 +2,20 @@ import React from "react";
 import { assets } from "../../assets/assets";
 const footerNavs = [
   {
-    href: "javascript:void()",
-    name: "About",
+    href: "/",
+    name: "Home",
   },
   {
-    href: "javascript:void()",
-    name: "Blog",
+    href: "/menu",
+    name: "Menu",
   },
   {
-    href: "javascript:void()",
-    name: "",
+    href: "/mobile",
+    name: "Mobile-app",
   },
   {
-    href: "javascript:void()",
-    name: "Team",
-  },
-  {
-    href: "javascript:void()",
-    name: "Careers",
-  },
-
-  {
-    href: "javascript:void()",
-    name: "Suuport",
+    href: "/contact",
+    name: "Contact us",
   },
 ];
 

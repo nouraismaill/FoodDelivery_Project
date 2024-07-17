@@ -14,7 +14,10 @@ const App = () => {
   return (
     <>
       <div className="app">
-        <Navbar />
+        <div className="sticky top-0 z-50 shadow-md shadow-gray">
+          <Navbar />
+        </div>
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
