@@ -4,9 +4,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons"; // Import the specific icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { assets } from "../assets/assets";
 
-const Navbar = () => {
+const Navbar = ({ setShowLogin }) => {
   const [state, setState] = useState(false);
 
   const navigation = [
@@ -92,15 +93,18 @@ const Navbar = () => {
                 />
               </li>
               <li>
-                <FontAwesomeIcon
-                  icon={faCartPlus}
-                  className="text-gray-700 lg:size-7  md:size-[24px] mt-2 hover:text-[#B15429] "
-                />
+                <Link to="/cart">
+                  <FontAwesomeIcon
+                    icon={faCartPlus}
+                    className="text-gray-700 lg:size-7  md:size-[24px] mt-2 hover:text-[#B15429] "
+                  />
+                </Link>
               </li>
               <li className="">
                 <a
-                  href="/sign-in" // Replace with your actual path
-                  className="block py-3  px-4 font-medium text-center text-white bg-[#FF4C24] hover:bg-red-500 active:bg-red-700 active:shadow-none rounded-full shadow md:inline"
+                  // Replace with your actual path
+                  className="block py-3  px-4 font-medium text-center cursor-pointer text-white bg-[#FF4C24] hover:bg-red-500 active:bg-red-700 active:shadow-none rounded-full shadow md:inline"
+                  onClick={() => setShowLogin(true)}
                 >
                   Sign in
                 </a>

@@ -1,0 +1,70 @@
+.cart {
+  margin-top: 100px;
+}
+.cart-title {
+  display: grid;
+  margin: 0px 29px;
+  grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 0.5fr;
+  align-items: center;
+  color: grey;
+  font-size: max(1w, 12px);
+}
+.cart-details {
+  display: flex;
+  justify-content: space-between;
+  color: #555;
+}
+/* From Uiverse.io by Gautammsharma */
+.comic-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #ff5252;
+  border: 2px solid #000;
+  border-radius: 10px;
+  box-shadow: 5px 5px 0px #000;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.comic-button:hover {
+  background-color: #fff;
+  color: #1e1e2e;
+  border: 2px solid #ff5252;
+  box-shadow: 5px 5px 0px #ff5252;
+}
+
+.comic-button:active {
+  background-color: #fc5130;
+  box-shadow: none;
+  transform: translateY(4px);
+}
+/* From Uiverse.io by deepak16375 */
+.input {
+  max-width: 190px;
+  padding: 12px 5px;
+  font-size: 17px;
+  display: flex;
+  color: black;
+  background: transparent;
+  border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  border: 2px solid #fff;
+  margin-right: -10px;
+}
+
+.button {
+  border: none;
+  background-color: black;
+  text-decoration: none;
+  padding: 15px;
+  font-size: 17px;
+  color: #fff;
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  cursor: pointer;
+}
