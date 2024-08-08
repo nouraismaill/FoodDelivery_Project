@@ -1,22 +1,74 @@
-import React from "react";
-import { assets } from "../assets/assets";
+import axios from "axios";
 
+import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
+import { assets } from "../assets/assets";
 const Add = () => {
+  const url = "http://localhost:3000";
+  const [image, setImage] = useState(false);
+  const [data, setData] = useState({
+    name: "",
+    description: "",
+    price: "",
+    category: "Salad",
+  });
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
+  const onSubmitHandler = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+
+    formData.append("name", data.name);
+    formData.append("description", data.description);
+    formData.append("price", Number(data.price));
+    formData.append("category", data.category);
+    formData.append("image", image);
+    const response = await axios.post(`${url}/api/food/add`, formData);
+    if (response.data.success) {
+      setData({
+        name: "",
+        description: "",
+        price: "",
+        category: "Salad",
+      });
+      setImage(false);
+      toast.success(response.data.message);
+    } else {
+      toast.error(response.data.message);
+    }
+  };
+
   return (
     <>
-      <div class="mt-4 flex flex-col mx-16 rounded-lg p-4  gap-[30px]">
+      <form
+        class="mt-4 flex flex-col mx-16 rounded-lg p-4  gap-[30px]"
+        onSubmit={onSubmitHandler}
+      >
         <div class="mt-3 ">
           <p>Upload Image</p>
           <label class="text-black" htmlFor="image">
-            <img src={assets.upload_area} className="mt-3" alt="" />
+            <img
+              src={image ? URL.createObjectURL(image) : assets.upload_area}
+              className="mt-3 w-6/12"
+              alt=""
+            />
           </label>
-          <input id="image" hidden required type="file" />
+          <input
+            onChange={(e) => setImage(e.target.files[0])}
+            id="image"
+            hidden
+            required
+            type="file"
+          />
         </div>
         <div class="">
           <label class="text-black" for="name">
             Product name
           </label>
           <input
+            onChange={(e) => setData({ ...data, name: e.target.value })}
+            value={data.name}
             placeholder="Type here"
             class="w-full mt-2 bg-white border border-gray-300 rounded-md  text-black px-2 py-1"
             name="name"
@@ -28,10 +80,12 @@ const Add = () => {
             Product Description
           </label>
           <textarea
+            onChange={(e) => setData({ ...data, description: e.target.value })}
+            value={data.description}
             placeholder="Write content here"
             required
             class="w-full mt-2 bg-white rounded-md border  border-gray-300 text-black px-2 py-1"
-            name="desc"
+            name="description"
             rows={6}
           ></textarea>
         </div>
@@ -44,6 +98,8 @@ const Add = () => {
             <select
               class="w-full bg-white  border rounded-md border-gray-300 text-black mt-2 px-0 py-1"
               name="category"
+              onChange={(e) => setData({ ...data, category: e.target.value })}
+              value={data.category}
             >
               <option value="Salad">Salad</option>
               <option value="Rolls">Rolls</option>
@@ -62,6 +118,8 @@ const Add = () => {
             <input
               class="w-full mt-2 bg-white rounded-md border-gray-300 border  text-black px-2 py-1"
               name="price"
+              onChange={(e) => setData({ ...data, price: e.target.value })}
+              value={data.price}
               type="number"
               placeholder="$20"
             />
@@ -76,7 +134,7 @@ const Add = () => {
             ADD
           </button>
         </div>
-      </div>
+      </form>
     </>
   );
 };
