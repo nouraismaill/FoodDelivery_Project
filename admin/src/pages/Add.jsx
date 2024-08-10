@@ -3,8 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { assets } from "../assets/assets";
-const Add = () => {
-  const url = "http://localhost:3000";
+const Add = ({ url }) => {
   const [image, setImage] = useState(false);
   const [data, setData] = useState({
     name: "",
@@ -42,7 +41,7 @@ const Add = () => {
   return (
     <>
       <form
-        class="mt-4 flex flex-col mx-16 rounded-lg p-4  gap-[30px]"
+        class="mt-4 flex flex-col lg:mx-16 md:mx-16 sm:mx-18 rounded-lg p-4  gap-[30px] "
         onSubmit={onSubmitHandler}
       >
         <div class="mt-3 ">
@@ -92,7 +91,7 @@ const Add = () => {
 
         <div class="mt-4   gap-4 flex flex-row space-x-2">
           <div class="flex-1 w-2 ">
-            <label class="text-black" for="category">
+            <label class="text-black text-nowrap" for="category">
               Product category
             </label>
             <select
@@ -111,12 +110,12 @@ const Add = () => {
               <option value="Noodles">Noodles</option>
             </select>
           </div>
-          <div class="flex-1 w-2 ">
-            <label class="text-black" for="price">
+          <div class="flex-1 w-2  ">
+            <label class="text-black  text-nowrap" for="price">
               Product price
             </label>
             <input
-              class="w-full mt-2 bg-white rounded-md border-gray-300 border  text-black px-2 py-1"
+              class="w-full mt-2  bg-white rounded-md border-gray-300 border  text-black px-2 py-1"
               name="price"
               onChange={(e) => setData({ ...data, price: e.target.value })}
               value={data.price}

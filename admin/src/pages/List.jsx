@@ -2,9 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
-const List = () => {
+const List = ({ url }) => {
   const [list, setList] = useState([]);
-  const url = "http://localhost:3000";
 
   const fetchList = async () => {
     const respo = await axios.get(`${url}/api/food/list`);
@@ -15,8 +14,14 @@ const List = () => {
       toast.error("Error");
     }
   };
-  const deleteItems = async () => {
-    const response = await axios.post(`${url}/api/food/delete`);
+  const deleteItems = async (foodID) => {
+    const response = await axios.post(`${url}/api/food/delete`, { id: foodID });
+    await fetchList();
+    if (response.data.success) {
+      toast.success(response.data.message);
+    } else {
+      toast.error(response.data.message);
+    }
   };
 
   useEffect(() => {
@@ -24,7 +29,7 @@ const List = () => {
   }, []);
 
   return (
-    <div className="w-full my-7 px-4 md:px-8">
+    <div className="w-full my-7 px-4 md:px-9">
       <div className="w-full">
         <p className="text-gray-800 text-xl font-bold sm:text-2xl">
           All Food List
@@ -60,7 +65,10 @@ const List = () => {
                 <td className="px-6 py-4 whitespace-nowrap">{item.category}</td>
                 <td className="px-6 py-4 whitespace-nowrap">${item.price}</td>
                 <td className="px-6 py-4 whitespace-nowrap">
-                  <button className="text-red-600" onClick={deleteItems}>
+                  <button
+                    className="text-red-600"
+                    onClick={() => deleteItems(item._id)}
+                  >
                     Delete
                   </button>
                 </td>

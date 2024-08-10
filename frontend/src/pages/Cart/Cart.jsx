@@ -4,9 +4,10 @@ import { StoreContext } from "../../context/StoreContext";
 import "./Cart.css";
 
 const Cart = () => {
-  const { cartItems, food_list, removeFromCart, getTotalCartAmount } =
+  const { cartItems, food_list, url, removeFromCart, getTotalCartAmount } =
     useContext(StoreContext);
   const navigate = useNavigate();
+
   return (
     <div className="cart mb-20 ">
       <div className="cart-items mx-4">
@@ -25,7 +26,11 @@ const Cart = () => {
             return (
               <div key={index}>
                 <div className="cart-title my-2 mr-[6px] text-black text-sm gap-4">
-                  <img className="w-1/2 mx-2" src={item.image} alt="" />
+                  <img
+                    className="w-1/2 mx-2"
+                    src={url + "/images/" + item.image}
+                    alt=""
+                  />
                   <p>{item.name}</p>
                   <p>${item.price}</p>
                   <p>{cartItems[item._id]}</p>
