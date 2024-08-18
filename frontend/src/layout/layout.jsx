@@ -8,6 +8,7 @@ import Home from "../pages/Home/Home";
 import PlaceOrder from "../pages/PlaceOrder/PlaceOrder";
 import { Contact } from "../pages/contact";
 import Menu from "../pages/menu";
+import Verify from "../pages/verify";
 import Mobile from "../pages/mobile";
 import ScrollToTop from "./ScrollToTop";
 const Layout = () => {
@@ -30,6 +31,7 @@ const Layout = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/mobile" element={<Mobile />} />
+          <Route path="/verify" element={<Verify />} />
         </Routes>
       </main>
 

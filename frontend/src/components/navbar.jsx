@@ -133,22 +133,13 @@ const Navbar = ({ setShowLogin }) => {
                     onMouseEnter={() => setIsDropdownVisible(true)}
                     onMouseLeave={() => setIsDropdownVisible(false)}
                   >
-                    <Avatar
-                      size={{
-                        xs: 24,
-                        sm: 32,
-                        md: 40,
-                        lg: 50,
-                        xl: 40,
-                      }}
-                      src={assets.profile_icon}
-                    />
+                    <Avatar src={assets.profile_icon} />
                     {isDropdownVisible && (
                       <ul className="absolute right-0 mt-2  flex flex-col gap-[10px] bg-[#fff2ef] py-2 px-4 border border-gray-300 shadow-lg rounded-md list-none ">
                         <li className="flex items-center   cursor-pointer hover:text-[#FF4C24]">
                           <img
                             src={assets.bag_icon}
-                            className="mr-4 w-[20px]"
+                            className="mr-4 size-10"
                             alt=""
                           />
                           Orders
