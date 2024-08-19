@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { StoreContext } from "../../context/StoreContext";
 import "./PlaceOrder.css";
@@ -41,7 +41,8 @@ const PlaceOrder = () => {
       amount: getTotalCartAmount() + 2,
     };
     const response = await axios.post(url + "/api/order/place", orderData, {
-      headers: { token }});
+      headers: { token },
+    });
     if (response.data.success) {
       const { session_url } = response.data;
       window.location.replace(session_url);
@@ -49,6 +50,16 @@ const PlaceOrder = () => {
       alert("Failed to place order");
     }
   };
+
+  useEffect(() => {
+    if (!token) {
+      navigate("/cart");
+    } else if (getTotalCartAmount() === 0) {
+      {
+        navigate("/cart");
+      }
+    }
+  }, [token]);
   return (
     <form
       className="px-20  mt-[100px] grid grid-cols-1 lg:grid-cols-2 gap-6 mb-5"
