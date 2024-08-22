@@ -52,7 +52,10 @@ const Myorders = () => {
                 <span className="text-red-600">&#x25cf;</span>
                 <b className="font-bold text-[#454545]">{order.status}</b>
               </p>
-              <button className="border-none py-[12px] px-[0px] border-r-2 bg-[#ffe1e1] cursor-pointer text-[#454545] lg:text-[15px] sm:text-[10px]">
+              <button
+                onClick={fetchOrders}
+                className="border-none py-[12px] px-[0px] border-r-2 bg-[#ffe1e1] cursor-pointer text-[#454545] lg:text-[15px] sm:text-[10px]"
+              >
                 Track Order
               </button>
             </div>

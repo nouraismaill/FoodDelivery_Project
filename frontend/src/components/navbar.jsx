@@ -17,14 +17,16 @@ const Navbar = ({ setShowLogin }) => {
     { title: "Mobile-app", path: "/mobile" },
     { title: "Contact us", path: "/contact" },
   ];
+
   const logout = () => {
     localStorage.removeItem("token");
     setToken("");
     navigate("/");
   };
+
   return (
     <>
-      <nav className="bg-white border-b mt-3 w-full md:static  md:border-none">
+      <nav className="bg-white border-b mt-3 w-full md:static md:border-none">
         <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
           <div className="flex items-center justify-between py-3 md:py-5 md:block mt-1">
             <a href="/">
@@ -32,7 +34,7 @@ const Navbar = ({ setShowLogin }) => {
                 src={assets.logo}
                 width={130}
                 height={50}
-                className="mb-3 mx-3"
+                class5ame="mb-3 mx-3 "
                 alt="Tomato logo"
               />
             </a>
@@ -74,15 +76,15 @@ const Navbar = ({ setShowLogin }) => {
             </div>
           </div>
           <div
-            className={`flex-1 pb-3 mt-8 md:block md:pb-0 md:mt-0 lg:space-y-4 md:space-x-9 md:ml-4  ${
+            className={`flex-1 pb-3 mt-8 md:block md:pb-0 md:mt-0 lg:space-y-4 md:space-x-9 md:ml-4 ${
               state ? "block" : "hidden"
             }`}
           >
-            <ul className="justify-end items-center space-y-6 md:flex md:space-x-6 md:space-y-2  lg:gap-5  md:text-sm md:text-nowrap ">
+            <ul className="justify-end items-center space-y-6 md:flex md:space-x-6 md:space-y-2 lg:gap-5 md:text-sm md:text-nowrap">
               {navigation.map((item, idx) => (
                 <li
                   key={idx}
-                  className="text-black lg:text-[18px]  font-semibold relative"
+                  className="text-black lg:text-[18px] font-semibold relative"
                 >
                   <NavLink
                     to={item.path}
@@ -100,44 +102,53 @@ const Navbar = ({ setShowLogin }) => {
                 </li>
               ))}
               <span className="hidden w-px h-6 bg-gray-300 md:block"></span>
-              <div className="space-y-3 items-center gap-x-4 md:gap-x-6 md:flex md:space-y-0 ">
+              <div className="space-y-3 items-center gap-x-4 md:gap-x-6 md:flex md:space-y-0 flex">
                 <li>
                   <FontAwesomeIcon
                     icon={faSearch}
-                    className="text-gray-700 lg:size-7 md:size-6  mt-2 hover:text-[#B15429]"
+                    className="text-gray-700 lg:size-7 md:size-6 lg:my-3 md:my-3 mt-4 hover:text-[#B15429] size-8"
+                    onClick={() => setState(false)} // Close menu on click
                   />
                 </li>
-                <li className="relative">
+                <li className="relative sm:flex-row">
                   <NavLink to="/cart">
                     <FontAwesomeIcon
                       icon={faCartPlus}
-                      className="text-gray-700 lg:size-7 md:size-[24px] mt-2 hover:text-[#B15429]"
+                      className="text-gray-700 lg:size-7 md:size-[24px] mt-2 hover:text-[#B15429] size-8"
+                      onClick={() => setState(false)} // Close menu on click
                     />
                     {getTotalCartAmount() > 0 && (
                       <div className="absolute top-0 right-0 mt-[1.7px] mb-2 ml-3 w-2.5 h-2.5 bg-red-600 rounded-full"></div>
                     )}
                   </NavLink>
                 </li>
+
                 {!token ? (
-                  <li className=" ">
+                  <li>
                     <a
-                      className="block  py-3 px-4 font-medium text-center cursor-pointer text-white bg-[#FF4C24] hover:bg-red-500 active:bg-red-700 active:shadow-none rounded-full shadow md:inline"
-                      onClick={() => setShowLogin(true)}
+                      className="block py-3 px-4 font-medium text-center cursor-pointer text-white bg-[#FF4C24] hover:bg-red-500 active:bg-red-700 active:shadow-none rounded-full shadow md:inline"
+                      onClick={() => {
+                        setShowLogin(true);
+                        setState(false); // Close menu on click
+                      }}
                     >
                       Sign in
                     </a>
                   </li>
                 ) : (
                   <div
-                    className="relative  "
+                    className="relative"
                     onMouseEnter={() => setIsDropdownVisible(true)}
                     onMouseLeave={() => setIsDropdownVisible(false)}
                   >
                     <Avatar src={assets.profile_icon} />
                     {isDropdownVisible && (
-                      <ul className="absolute right-0 mt-2  flex flex-col gap-[10px] bg-[#fff2ef] py-2 px-4 border border-gray-300 shadow-lg rounded-md list-none ">
-                        <NavLink to={"/myorders"}>
-                          <li className="flex items-center   cursor-pointer hover:text-[#FF4C24]">
+                      <ul className="absolute right-0 mt-2 flex flex-col gap-[10px] bg-[#fff2ef] py-2 px-4 border border-gray-300 shadow-lg rounded-md list-none">
+                        <NavLink to="/myorders">
+                          <li
+                            className="flex items-center cursor-pointer hover:text-[#FF4C24]"
+                            onClick={() => setState(false)} // Close menu on click
+                          >
                             <img
                               src={assets.bag_icon}
                               className="mr-4 size-5"
@@ -148,8 +159,11 @@ const Navbar = ({ setShowLogin }) => {
                         </NavLink>
                         <hr />
                         <li
-                          className="flex items-center mr-4 pr-4 cursor-pointer hover:text-[#FF4C24] "
-                          onClick={logout}
+                          className="flex items-center mr-4 pr-4 cursor-pointer hover:text-[#FF4C24]"
+                          onClick={() => {
+                            logout();
+                            setState(false); // Close menu on click
+                          }}
                         >
                           <img
                             src={assets.logout_icon}
