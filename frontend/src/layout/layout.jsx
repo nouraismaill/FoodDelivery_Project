@@ -11,7 +11,7 @@ import Menu from "../pages/menu";
 import Verify from "../pages/verify";
 
 import Myorders from "../pages/Myorders";
-import Mobile from "../pages/mobile";
+import About from "../pages/about";
 import ScrollToTop from "./ScrollToTop";
 const Layout = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -21,7 +21,7 @@ const Layout = () => {
         {showLogin ? <Login setShowLogin={setShowLogin} /> : <></>}
       </div>
 
-      <div className="sticky top-0 z-50 shadow-md shadow-gray">
+      <div className="sticky  top-0 z-50 shadow-md shadow-gray">
         <Navbar setShowLogin={setShowLogin} />
       </div>
       <main>
@@ -32,7 +32,7 @@ const Layout = () => {
           <Route path="/order" element={<PlaceOrder />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/menu" element={<Menu />} />
-          <Route path="/mobile" element={<Mobile />} />
+          <Route path="/about" element={<About />} />
           <Route path="/verify" element={<Verify />} />
           <Route path="/myorders" element={<Myorders />} />
         </Routes>

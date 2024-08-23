@@ -15,7 +15,7 @@ const FoodDisplay = ({ category }) => {
           if (category == "All" || category === item.category) {
             return (
               <Fade in={true} timeout={3000} key={index}>
-                <div>
+                <div class="max-w-xs transition duration-300 ease-in-out hover:shadow-lg dark:hover:shadow-black/30">
                   <FoodItem
                     id={item._id}
                     name={item.name}
