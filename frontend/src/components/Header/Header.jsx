@@ -5,18 +5,18 @@ import "./Header.css";
 const Header = () => {
   return (
     <>
-      <header>
+      <header className="">
         <div
-          className=" lg:w-[90%] md:w-[87%] sm:w-full bg-cover bg-center lg:mx-[73px] md:mx-[70px] rounded-3xl "
+          className="  lg:w-[90%] md:w-[87%]  sm:w-full bg-cover bg-center lg:mx-[73px] md:mx-[70px] lg:rounded-2xl md:rounded-2xl rounded-none leading-[24px] "
           style={{
-            height: "32rem",
+            height: "30.5rem",
             backgroundImage: `url(${image})`,
           }}
         >
-          <div className=" head flex flex-col items-center px-10 pt-[190px] h-full w-full text-start bg-gray-900 bg-opacity-30 rounded-3xl ">
-            <div className="pl-20 pb-10 animate-fadeIn my-[-80px] md:my-[-18px] lg:my-[6px]">
-              <div className="pb-7 mt-[-30px] sm:t[-90px]">
-                <h1 className="text-white  font-bold lg:text-5xl sm:text-2xl mr-60 md:text-3xl">
+          <div className=" text-[#f3f4f6] rounded-none head flex flex-col items-center px-10 pt-[190px]   h-full w-full text-start bg-gray-800  bg-opacity-30 md:rounded-2xl lg:rounded-2xl ">
+            <div className="pl-20 pb-6 animate-fadeIn my-[-80px] md:my-[-18px] lg:my-[6px]">
+              <div className="pb-[28px] text-left mt-[-30px] leading-[24px] sm:t[-90px] ">
+                <h1 className=" font-bold lg:text-5xl sm:text-2xl mr-60 md:text-3xl">
                   Order your
                   <div className="mt-2">favourite food here</div>
                 </h1>

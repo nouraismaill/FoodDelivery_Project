@@ -26,7 +26,7 @@ const Navbar = ({ setShowLogin }) => {
 
   return (
     <>
-      <nav className="sticky top-1 z-50 bg-white border-b pt-2 w-full md:static md:border-none">
+      <nav className="sticky top-1 z-50 bg-[#fafafa] text-[#020617] border-b pt-2 w-full md:static md:border-none">
         <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
           <div className="flex items-center justify-between py-3 md:py-5 md:block mt-1">
             <a href="/">
@@ -84,7 +84,7 @@ const Navbar = ({ setShowLogin }) => {
               {navigation.map((item, idx) => (
                 <li
                   key={idx}
-                  className="text-black mt-3 lg:text-[18px] font-semibold relative"
+                  className="text-[#0f172a] mt-3 lg:text-[18px] font-semibold relative"
                 >
                   <NavLink
                     to={item.path}

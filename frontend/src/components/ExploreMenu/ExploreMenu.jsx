@@ -3,12 +3,14 @@ import { menu_list } from "../../assets/assets";
 import "./Explore.css";
 const ExploreMenu = ({ category, setCategory }) => {
   return (
-    <div className="explore-menu mx-20 mt-10" id="explore-menu">
-      <h1 className="font-bold text-2xl">Explore our menu</h1>
-      <p className="explore-menu-text">
+    <div className="explore-menu mx-20 mt-6" id="explore-menu">
+      <h1 className="font-bold text-3xl py-[4px] px-[3px] text-[#020617]">
+        Explore our menu
+      </h1>
+      <p className="explore-menu-text text-[#64748b] my-[6px] mx-[30px]">
         Choose from a diverse menu featuring a dlectable array
       </p>
-      <div className="explore-menu-list">
+      <div className="explore-menu-list my-[11px] mx-[0px] text-[#64748b]">
         {menu_list.map((item, index) => {
           return (
             <div

@@ -6,13 +6,10 @@ const footerNavs = [
     name: "Home",
   },
   {
-    href: "/menu",
-    name: "Menu",
+    href: "/about",
+    name: "About",
   },
-  {
-    href: "/mobile",
-    name: "Mobile-app",
-  },
+
   {
     href: "/contact",
     name: "Contact us",
@@ -21,7 +18,7 @@ const footerNavs = [
 
 const Footer = () => {
   return (
-    <footer className="text-white bg-[#333333]  px-4 py-5 max-w-screen-xl mx-auto md:px-8">
+    <footer className="text-white bg-[#0f172a]  px-4 py-5 max-w-screen-xl mx-auto md:px-8">
       <div className="max-w-lg sm:mx-auto sm:text-center">
         <img src={assets.logo} className="w-32 sm:mx-auto" />
         <p className="leading-relaxed mt-2 text-[15px]">

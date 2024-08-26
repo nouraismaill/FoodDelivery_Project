@@ -2,7 +2,7 @@ export const MyComponent = () => {
   const APKUrl = "https://play.google.com/store/apps/details?id=host";
 
   return (
-    <header className="ezy__header3 light py-20 md:py-36 text-white bg-[#FF6045] ">
+    <header className="ezy__header3 light py-6  md:py-36 text-white bg-[#FF6045] ">
       <div className="container px-4 relative">
         <div className="grid grid-cols-12">
           <div className="col-span-12 text-center">

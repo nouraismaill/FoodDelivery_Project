@@ -5,7 +5,7 @@ import "./item.css";
 const FoodItem = ({ id, name, price, description, image }) => {
   const { cartItems, addToCart, removeFromCart, url } =
     useContext(StoreContext);
-
+  const isItemInCart = cartItems && cartItems[id];
   return (
     <div className="food-item ">
       <div className="relative ">
@@ -14,7 +14,7 @@ const FoodItem = ({ id, name, price, description, image }) => {
           src={url + "/images/" + image}
           alt=""
         />
-        {!cartItems[id] ? (
+        {!isItemInCart ? (
           <img
             className="w-[35px] absolute cursor-pointer rounded-sm right-[15px] bottom-2"
             onClick={() => addToCart(id)}
