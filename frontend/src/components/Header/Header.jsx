@@ -13,7 +13,7 @@ const Header = () => {
             backgroundImage: `url(${image})`,
           }}
         >
-          <div className=" text-[#f3f4f6] rounded-none head flex flex-col items-center px-10 pt-[190px]   h-full w-full text-start bg-gray-800  bg-opacity-30 md:rounded-2xl lg:rounded-2xl ">
+          <div className=" text-[#f3f4f6] rounded-none head flex flex-col items-center px-10 pt-[190px]   h-full w-full text-start bg-gray-800  bg-opacity-15 md:rounded-2xl lg:rounded-2xl ">
             <div className="pl-20 pb-8 animate-fadeIn my-[-40px] md:my-[-18px] lg:my-[-15px]">
               <div className="py-[40px] text-left mt-[-30px] leading-[24px] lg:pb-[28px]   ">
                 <h1 className=" font-bold lg:text-5xl text-3xl mr-60">
