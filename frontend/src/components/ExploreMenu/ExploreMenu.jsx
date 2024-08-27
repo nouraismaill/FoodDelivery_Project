@@ -7,7 +7,7 @@ const ExploreMenu = ({ category, setCategory }) => {
       <h1 className="font-bold text-3xl py-[4px] px-[3px] text-[#020617]">
         Explore our menu
       </h1>
-      <p className="explore-menu-text text-[#64748b] my-[6px] mx-[30px]">
+      <p className="explore-menu-text text-[#64748b] my-[6px] mx-[6px text-nowrap">
         Choose from a diverse menu featuring a dlectable array
       </p>
       <div className="explore-menu-list my-[11px] mx-[0px] text-[#64748b]">

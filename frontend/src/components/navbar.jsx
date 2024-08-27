@@ -84,7 +84,7 @@ const Navbar = ({ setShowLogin }) => {
               {navigation.map((item, idx) => (
                 <li
                   key={idx}
-                  className="text-[#0f172a] mt-3 lg:text-[18px] font-semibold relative"
+                  className="text-[#0f172a] mt-3 text-[15px] lg:text-[18px] font-bold relative"
                 >
                   <NavLink
                     to={item.path}
