@@ -4,11 +4,11 @@ import "./Explore.css";
 const ExploreMenu = ({ category, setCategory }) => {
   return (
     <div className="explore-menu mx-20 mt-6" id="explore-menu">
-      <h1 className="font-bold text-3xl py-[4px] px-[3px] text-[#020617]">
+      <h1 className="font-bold text-2xl lg:text-3xl py-[4px] px-[3px] text-[#020617] text-nowrap">
         Explore our menu
       </h1>
-      <p className="explore-menu-text text-[#64748b] my-[6px] mx-[6px text-nowrap">
-        Choose from a diverse menu featuring a dlectable array
+      <p className="explore-menu-text text-[#64748b] my-[6px] mx-[6px] text-[11px] lg:text-[20px]  text-nowrap">
+        Choose from a diverse menu featuring
       </p>
       <div className="explore-menu-list my-[11px] mx-[0px] text-[#64748b]">
         {menu_list.map((item, index) => {

@@ -9,7 +9,7 @@ const FoodDisplay = ({ category }) => {
 
   return (
     <div className="mt-[30px] m-[80px] text-[#171717]">
-      <h2 className="text-3xl font-bold mt-[-17px] text-[#171717]">
+      <h2 className="text-2xl lg:text-3xl text-nowrap font-bold mt-[-17px] text-[#171717]">
         Top dishes near you
       </h2>
       <div className=" item grid lg:grid-cols-4 gap-7 my-6 mx-auto transition duration-3000 animate-fadeIn rounded-sm sm:grid-cols-1 md:grid-cols-3 md:gap-4">

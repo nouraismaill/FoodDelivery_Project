@@ -38,9 +38,7 @@ const Layout = () => {
         </Routes>
       </main>
 
-      <div>
-        <Footer />
-      </div>
+      <Footer />
     </>
   );
 };
