@@ -2,16 +2,16 @@ import React from "react";
 
 const About = () => {
   return (
-    <section className="ezy__about13 gray py-20 md:py-28 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white relative ">
-      <div className="container px-4 ">
+    <section className="ezy__about gray py-20 ml-[-180px] md:py-28 bg-white dark:bg-[#0b1727] text-zinc-900 dark:text-white relative ">
+      <div className="container  px-6 ">
         <div className="grid grid-cols-12 gap-5 justify-center items-center">
           <div className="col-span-12 lg:col-span-6">
-            <div className="lg:px-8 px-4 ">
-              <h1 className="uppercase text-4xl md:text-6xl leading-tight font-medium mb-2">
+            <div className="lg:px-8 mx-[80px] pl-[150px] ">
+              <h1 className="uppercase text-3xl lg:text-4xl md:text-6xl leading-tight font-medium mb-2">
                 ABOUT US
               </h1>
               <hr className="w-24 h-1 bg-black dark:bg-white opacity-100 my-6" />
-              <p className="text-lg leading-normal opacity-75 my-2">
+              <p className="text-md lg:text-lg text-wrap leading-normal opacity-75 my-2">
                 Completely network collaborative web services via user-centric
                 initiatives. Quickly promote sticky testing procedures before
                 unique process improvements. Distinctively engineer innovative
@@ -32,7 +32,7 @@ const About = () => {
           </div>
           <div className="col-span-12 lg:col-span-6">
             <div className="w-[36vw] absolute top-0 right-0 bottom-0 float-left bg-[#EC1D23] bg-opacity-80" />
-            <div className="relative flex justify-center lg:flex-col lg:pl-20">
+            <div className="relative flex justify-center lg:flex-col pl-[160px] lg:pl-20">
               <img
                 src="https://www.miops.com/cdn/shop/articles/Food_Photography___How_to_Take_Unique_and_Creative_Food_Photos_5_1280x1100_crop_center.jpg?v=1661150733"
                 alt=""
