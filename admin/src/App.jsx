@@ -8,7 +8,7 @@ import Add from "./pages/Add";
 import List from "./pages/List";
 import Orders from "./pages/Orders";
 const App = () => {
-  const url = "https://fooddelivery-admin-mzye.onrender.com";
+  const url = "https://tomatofood.onrender.com";
   return (
     <div>
       <ToastContainer />
