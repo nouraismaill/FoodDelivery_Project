@@ -3,7 +3,7 @@ import orderModel from "../models/orderModel.js";
 import userModel from "../models/userModel.js";
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 const placeOrder = async (req, res) => {
-  const url = "https://tomato-food.onrender.com/";
+  const url = "https://tomato-food.onrender.com";
   try {
     const newOrder = new orderModel({
       userId: req.body.userId,
