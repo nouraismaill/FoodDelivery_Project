@@ -7,6 +7,8 @@ const StoreContextProvider = (props) => {
   const url = "https://tomatofood.onrender.com";
   const [token, setToken] = useState("");
   const [food_list, setFoodList] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   const addToCart = async (itemId) => {
     if (!cartItems[itemId]) {
       setCardItems((prev) => ({ ...prev, [itemId]: 1 }));
@@ -42,8 +44,21 @@ const StoreContextProvider = (props) => {
     return totalAmount;
   };
   const fetchFoodList = async () => {
-    const response = await axios.get(`${url}/api/food/list`);
-    setFoodList(response.data.data);
+    setLoading(true);
+    try {
+      const response = await axios.get(`${url}/api/food/list`);
+      const result = response.data;
+
+      if (response.status !== 200) {
+        throw new Error(result.message + "🥺");
+      }
+
+      setFoodList(result.data);
+      setLoading(false);
+    } catch (err) {
+      setLoading(false);
+      setError(err.message);
+    }
   };
   const loadCartData = async (token) => {
     const response = await axios.post(
@@ -74,6 +89,8 @@ const StoreContextProvider = (props) => {
     token,
     setToken,
     fetchFoodList,
+    loading,
+    error,
   };
 
   return (
